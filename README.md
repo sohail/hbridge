@@ -11,9 +11,12 @@ An H Bridge can be used in many different power electronics. The H Bridge of thi
 - Two P-channel enhancement mode MOSFETs
 - Two NPN BJTs
 - Two voltage regulators
-- Couple of resistors, to manage the flow of current at the base pin of NPN transistors
+- Couple of resistors, to manage the flow of current at the base pins of NPN transistors
 
+### Video of prototype of this circuit
 Following is a link of a video about the working prototype of this H-Bridge electronic circuit...
+
+### The circuit sketches
 
 [H-Bridge electronic circuit](https://www.youtube.com/watch?v=_cwA7jFTUsA&t=6s)
 
