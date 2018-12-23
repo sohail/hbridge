@@ -417,50 +417,6 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 </deviceset>
 </devicesets>
 </library>
-<library name="ngspice-simulation" urn="urn:adsk.eagle:library:527439">
-<description>SPICE compatible library parts</description>
-<packages>
-</packages>
-<symbols>
-<symbol name="VOLTAGE" urn="urn:adsk.eagle:symbol:5272021/1" library_version="16">
-<description>Independent Voltage Source, either DC, AC, PULSE, SINE, PWL, EXP, or SFFM</description>
-<circle x="0" y="0" radius="5.08" width="0.1524" layer="94"/>
-<pin name="+" x="0" y="7.62" visible="off" length="short" direction="pas" rot="R270"/>
-<pin name="-" x="0" y="-7.62" visible="off" length="short" direction="pas" rot="R90"/>
-<text x="7.62" y="2.54" size="1.778" layer="95">&gt;NAME</text>
-<text x="7.62" y="0" size="1.778" layer="96">&gt;VALUE</text>
-<text x="7.62" y="-2.54" size="1.778" layer="97">&gt;SPICEMODEL</text>
-<text x="7.62" y="-5.08" size="1.778" layer="97">&gt;SPICEEXTRA</text>
-<wire x1="-1.27" y1="2.54" x2="1.27" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="3.81" x2="0" y2="1.27" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="VOLTAGE" urn="urn:adsk.eagle:component:5272042/1" prefix="V" uservalue="yes" library_version="16">
-<description>Independent Voltage Source, either DC, AC, PULSE, SINE, PWL, EXP, or SFFM</description>
-<gates>
-<gate name="G$1" symbol="VOLTAGE" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name="">
-<attribute name="VALUE" value="0V" constant="no"/>
-<attribute name="_EXTERNAL_" value="" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-<spice>
-<pinmapping spiceprefix="V">
-<pinmap gate="G$1" pin="+" pinorder="1"/>
-<pinmap gate="G$1" pin="-" pinorder="2"/>
-</pinmapping>
-</spice>
-</deviceset>
-</devicesets>
-</library>
 <library name="docu-dummy" urn="urn:adsk.eagle:library:215">
 <description>Dummy symbols</description>
 <packages>
@@ -506,16 +462,13 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <part name="Q1" library="transistor-fet" library_urn="urn:adsk.eagle:library:396" deviceset="IRF9530" device="" package3d_urn="urn:adsk.eagle:package:28520/1"/>
 <part name="IC1" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="*337" device="T" package3d_urn="urn:adsk.eagle:package:16414/1"/>
 <part name="T1" library="transistor" library_urn="urn:adsk.eagle:library:402" deviceset="2N2222" device="" package3d_urn="urn:adsk.eagle:package:29892/2"/>
-<part name="V1" library="ngspice-simulation" library_urn="urn:adsk.eagle:library:527439" deviceset="VOLTAGE" device="" value="0V"/>
 <part name="R1" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="R" device=""/>
-<part name="RB" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="R" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="-66.04" y="187.96" size="1.778" layer="91">Motor terminal</text>
-<text x="-106.68" y="172.72" size="1.778" layer="91" rot="R90">Motor terminal</text>
-<text x="-124.46" y="190.5" size="1.778" layer="91">Microcontroller output is received here for the base pin of the npn transistor </text>
+<text x="-132.08" y="147.32" size="6.4516" layer="94">+</text>
+<text x="-147.32" y="167.64" size="6.4516" layer="94">-</text>
 </plain>
 <instances>
 <instance part="Q1" gate="G$1" x="-71.12" y="185.42" smashed="yes">
@@ -526,11 +479,8 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 </instance>
 <instance part="T1" gate="G$1" x="-111.76" y="175.26" smashed="yes" rot="R270">
 <attribute name="NAME" x="-114.3" y="180.34" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="-116.84" y="175.26" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="V1" gate="G$1" x="-139.7" y="149.86" smashed="yes" rot="R270"/>
 <instance part="R1" gate="G$1" x="-119.38" y="187.96" smashed="yes"/>
-<instance part="RB" gate="G$1" x="-119.38" y="187.96" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -540,6 +490,7 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <pinref part="T1" gate="G$1" pin="C"/>
 <pinref part="IC1" gate="A1" pin="ADJ"/>
 <wire x1="-106.68" y1="172.72" x2="-99.06" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="-106.68" y1="172.72" x2="-106.68" y2="200.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -552,8 +503,7 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <net name="T1_E" class="0">
 <segment>
 <pinref part="T1" gate="G$1" pin="E"/>
-<pinref part="V1" gate="G$1" pin="-"/>
-<wire x1="-147.32" y1="149.86" x2="-147.32" y2="172.72" width="0.1524" layer="91"/>
+<wire x1="-147.32" y1="170.18" x2="-147.32" y2="172.72" width="0.1524" layer="91"/>
 <wire x1="-147.32" y1="172.72" x2="-116.84" y2="172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -561,7 +511,6 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <segment>
 <pinref part="IC1" gate="A1" pin="VI"/>
 <wire x1="-91.44" y1="162.56" x2="-132.08" y2="162.56" width="0.1524" layer="91"/>
-<pinref part="V1" gate="G$1" pin="+"/>
 <wire x1="-132.08" y1="162.56" x2="-132.08" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="S"/>
 <wire x1="-66.04" y1="182.88" x2="-66.04" y2="162.56" width="0.1524" layer="91"/>
@@ -573,6 +522,17 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <pinref part="T1" gate="G$1" pin="B"/>
 <wire x1="-111.76" y1="177.8" x2="-111.76" y2="187.96" width="0.1524" layer="91"/>
 <wire x1="-111.76" y1="187.96" x2="-116.84" y2="187.96" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="D"/>
+<wire x1="-66.04" y1="187.96" x2="-66.04" y2="195.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<wire x1="-124.46" y1="187.96" x2="-134.62" y2="187.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -595,12 +555,6 @@ will not be understood (or retained) with this version.
 Since Version 8.3, EAGLE supports the association of 3D packages
 with devices in libraries, schematics, and board files. Those 3D
 packages will not be understood (or retained) with this version.
-</note>
-<note version="8.4" severity="warning">
-Since Version 8.4, EAGLE supports properties for SPICE simulation. 
-Probes in schematics and SPICE mapping objects found in parts and library devices
-will not be understood with this version. Update EAGLE to the latest version
-for full support of SPICE simulation. 
 </note>
 </compatibility>
 </eagle>
