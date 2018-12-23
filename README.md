@@ -14,11 +14,12 @@ An H Bridge can be used in many different power electronics. The H Bridge of thi
 - Couple of resistors, to manage the flow of current at the base pins of NPN transistors
 
 ### Video of prototype of this circuit
+
 Following is a link of a video about the working prototype of this H-Bridge electronic circuit...
 
-### The circuit sketches
-
 [H-Bridge electronic circuit](https://www.youtube.com/watch?v=_cwA7jFTUsA&t=6s)
+
+### The circuit sketches
 
 ![Circuit Sketch 1](H-Bridge.png)
 ![Circuit Sketch 2](H-Bridge3.png)
